@@ -1,0 +1,151 @@
+#page-home {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  flex-direction: column;
+
+  position: absolute;
+
+  background: url("../../images/home-background.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+#page-home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30,47,189,.65);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#page-home .logo {
+  animation: fadeIn 1s cubic-bezier(0.85, 0, 0.15, 1);
+  position: relative;
+  z-index: 5;
+  width: 80%;
+  max-width: 300px;
+  margin-top: 50px;
+  user-select: none;
+}
+
+#page-home .logo img {
+  display: block;
+  width: 100%;
+
+  filter: drop-shadow(15px 15px 20px rgba(0,0,0,0.4));
+}
+
+#page-home .search-box {
+  animation: fadeIn 1s cubic-bezier(0.85, 0, 0.15, 1);
+  padding: 20px;
+  width: 100%;
+
+  position: relative;
+  z-index: 10;
+}
+
+#page-home .search-box form {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#page-home .search-box form input, #page-home .search-box form button {
+  padding: 20px 40px;
+  border-radius: 0;
+  outline: none;
+  user-select: none;
+}
+
+#page-home .search-box form input {
+  font-size: 20px;
+  width: calc(80% - 100px - 40px * 2);
+  max-width: 600px;
+  border-radius: 10px 0 0 10px;
+}
+
+#page-home .search-box form button {
+  font-size: 20px;
+  border-radius: 0 10px 10px 0;
+  background: #6495ed;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#page-home .search-box form button:hover {
+  background: #255fca;
+}
+
+#page-home .champions-suggestions {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#page-home .champions-suggestions ul {
+  background: #FFF;
+  width: 80%;
+  max-width: calc(600px + 100px);
+  max-height: 400px;
+  overflow-y: scroll;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+#page-home .champions-suggestions ul::-webkit-scrollbar {
+  width: 0;
+}
+
+#page-home .champions-suggestions ul li {
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  
+  font-size: 20px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s, color 0.2s;
+}
+
+#page-home .champions-suggestions ul li:hover {
+  background: rgba(30,47,189,.65);
+  color: #fff;
+}
+
+#page-home .champions-suggestions ul li img {
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+@media (max-width: 1050px) {
+  #page-home .search-box form button {
+    display: none;
+  }
+  #page-home .search-box form input {
+    border-radius: 10px;
+    width: 95%;
+    max-width: calc(600px + 100px);
+  }
+  #page-home .champions-suggestions ul {
+    width: 95%;
+  }
+}
